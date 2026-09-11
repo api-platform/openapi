@@ -720,7 +720,7 @@ final class OpenApiFactory implements OpenApiFactoryInterface
     private function getFilterParameter(string $name, array $description, string $shortName, string $filter): Parameter
     {
         if (isset($description['swagger'])) {
-            trigger_deprecation('api-platform/core', '4.0', \sprintf('Using the "swagger" field of the %s::getDescription() (%s) is deprecated.', $filter, $shortName));
+            trigger_deprecation('api-platform/core', '4.0', \sprintf('Using the "swagger" field of the %s::getDescription() (%s) is deprecated and will be removed in 6.0.', $filter, $shortName));
         }
 
         if (!isset($description['openapi']) || $description['openapi'] instanceof Parameter) {
